@@ -136,7 +136,7 @@ Error generating stack: `+i.message+`
     justify-content: center;
     align-items: center;
   }
-`;function Kv(e){const{sessaoId:t}=sp(),n=Hu(),{finalizar:r}=e,[o,i]=_.useState(null),[l,s]=_.useState([]),[u,a]=_.useState({nome:"",cpf:""});_.useEffect(()=>{const w=`https://mock-api.driven.com.br/api/v5/cineflex/showtimes/${t}/seats`;Si.get(w).then(({data:P})=>{i(P)})},[]);function f(w){if(w.preventDefault(),R.length>0){const x="https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many",P=Si.post(x,{ids:l.map(E=>E.id),name:u.nome,cpf:u.cpf});P.then(E=>{r({filme:o.movie.title,dia:o.day.date,horario:o.name,assentos:l,comprador:u}),n("/sucesso")}),P.catch(E=>alert(E.response.statusText))}else alert("Selecione pelo menos um assento!")}function p(w,x){if(!l.some(E=>E.id===w))s([...l,{id:w,numero:x}]);else{const E=l.filter(O=>O.id!==w);s(E)}}function m(){if(o!==null)return o.seats.map(w=>{const{id:x,name:P,isAvailable:E}=w,O=l.some(U=>U.id===x);return C.jsx(Wv,{id:x,numero:P,disponivel:E,selecionado:O,aoSelecionar:(U,z)=>p(U,z)},x)})}function v(){return o!==null?C.jsxs(C.Fragment,{children:[C.jsx("img",{src:o.movie.posterURL,alt:o.movie.title}),C.jsxs("div",{children:[C.jsx("p",{children:o.movie.title}),C.jsxs("p",{children:[o.day.weekday," - ",o.name]})]})]}):C.jsx("p",{children:"Carregando..."})}function y(){return C.jsxs(C.Fragment,{children:[C.jsxs(Il,{cor:"#8DD7CF",children:[C.jsx("button",{}),C.jsx("p",{children:"Selecionado"})]}),C.jsxs(Il,{children:[C.jsx("button",{}),C.jsx("p",{children:"Disponível"})]}),C.jsxs(Il,{cor:"#FBE192",children:[C.jsx("button",{}),C.jsx("p",{children:"Indisponível"})]})]})}function g(){return C.jsxs(C.Fragment,{children:[C.jsx("label",{htmlFor:"nome",children:"Nome do comprador:"}),C.jsx("input",{type:"text",id:"nome",value:u.nome,placeholder:"Digite seu nome...",required:!0,onChange:w=>a({...u,nome:w.target.value})}),C.jsx("label",{htmlFor:"cpf",children:"CPF do comprador:"}),C.jsx("input",{type:"text",id:"cpf",value:u.cpf,placeholder:"Digite seu CPF...",required:!0,onChange:w=>a({...u,cpf:w.target.value})}),C.jsx("div",{children:C.jsx("button",{children:"Reservar assento(s)"})})]})}const R=m(),d=v(),c=y(),h=g();return C.jsxs(Xi,{children:[C.jsx("h1",{children:"Selecione o(s) assentos(s)"}),C.jsx(Gv,{children:R}),C.jsx(Yv,{children:c}),C.jsx(Jv,{onSubmit:f,children:h}),C.jsx(Xp,{children:d})]})}const Gv=me.div`
+`;function Kv(e){const{sessaoId:t}=sp(),n=Hu(),{finalizar:r}=e,[o,i]=_.useState(null),[l,s]=_.useState([]),[u,a]=_.useState({nome:"",cpf:""});_.useEffect(()=>{const w=`https://mock-api.driven.com.br/api/v5/cineflex/showtimes/${t}/seats`;Si.get(w).then(({data:P})=>{i(P)})},[]);function f(w){if(w.preventDefault(),R.length>0){const x="https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many",P=Si.post(x,{ids:l.map(E=>E.id),name:u.nome,cpf:u.cpf});P.then(E=>{r({filme:o.movie.title,dia:o.day.date,horario:o.name,assentos:l,comprador:u}),n("/cineflex/sucesso")}),P.catch(E=>alert(E.response.statusText))}else alert("Selecione pelo menos um assento!")}function p(w,x){if(!l.some(E=>E.id===w))s([...l,{id:w,numero:x}]);else{const E=l.filter(O=>O.id!==w);s(E)}}function m(){if(o!==null)return o.seats.map(w=>{const{id:x,name:P,isAvailable:E}=w,O=l.some(U=>U.id===x);return C.jsx(Wv,{id:x,numero:P,disponivel:E,selecionado:O,aoSelecionar:(U,z)=>p(U,z)},x)})}function v(){return o!==null?C.jsxs(C.Fragment,{children:[C.jsx("img",{src:o.movie.posterURL,alt:o.movie.title}),C.jsxs("div",{children:[C.jsx("p",{children:o.movie.title}),C.jsxs("p",{children:[o.day.weekday," - ",o.name]})]})]}):C.jsx("p",{children:"Carregando..."})}function y(){return C.jsxs(C.Fragment,{children:[C.jsxs(Il,{cor:"#8DD7CF",children:[C.jsx("button",{}),C.jsx("p",{children:"Selecionado"})]}),C.jsxs(Il,{children:[C.jsx("button",{}),C.jsx("p",{children:"Disponível"})]}),C.jsxs(Il,{cor:"#FBE192",children:[C.jsx("button",{}),C.jsx("p",{children:"Indisponível"})]})]})}function g(){return C.jsxs(C.Fragment,{children:[C.jsx("label",{htmlFor:"nome",children:"Nome do comprador:"}),C.jsx("input",{type:"text",id:"nome",value:u.nome,placeholder:"Digite seu nome...",required:!0,onChange:w=>a({...u,nome:w.target.value})}),C.jsx("label",{htmlFor:"cpf",children:"CPF do comprador:"}),C.jsx("input",{type:"text",id:"cpf",value:u.cpf,placeholder:"Digite seu CPF...",required:!0,onChange:w=>a({...u,cpf:w.target.value})}),C.jsx("div",{children:C.jsx("button",{children:"Reservar assento(s)"})})]})}const R=m(),d=v(),c=y(),h=g();return C.jsxs(Xi,{children:[C.jsx("h1",{children:"Selecione o(s) assentos(s)"}),C.jsx(Gv,{children:R}),C.jsx(Yv,{children:c}),C.jsx(Jv,{onSubmit:f,children:h}),C.jsx(Xp,{children:d})]})}const Gv=me.div`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
@@ -158,7 +158,7 @@ Error generating stack: `+i.message+`
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    border: 1px solid #808F9D;
+    border: 1px solid #808f9d;
     background-color: ${({cor:e})=>e||"#C3CFD9"};
   }
 
@@ -166,7 +166,6 @@ Error generating stack: `+i.message+`
     font-size: 13px;
     margin-top: 5px;
   }
-
 `,Jv=me.form`
   display: flex;
   flex-direction: column;
@@ -198,10 +197,10 @@ Error generating stack: `+i.message+`
     justify-content: center;
     align-items: center;
   }
-`;function Xv(e){const{id:t,poster:n}=e;return C.jsx(cp,{to:`/sessoes/${t}`,children:C.jsx(qv,{children:C.jsx("img",{src:n,alt:"filme"})})})}const qv=me.div`
+`;function Xv(e){const{id:t,poster:n}=e;return C.jsx(cp,{to:`/cineflex/sessoes/${t}`,children:C.jsx(qv,{children:C.jsx("img",{src:n,alt:"filme"})})})}const qv=me.div`
   padding: 8px;
   background-color: white;
-  box-shadow: 0px 2px 4px 2px #0000001A;
+  box-shadow: 0px 2px 4px 2px #0000001a;
   border-radius: 3px;
   margin: 10px 15px;
   cursor: pointer;
@@ -210,12 +209,11 @@ Error generating stack: `+i.message+`
     height: 190px;
     width: 130px;
   }
-
 `;function Zv(){const[e,t]=_.useState([]);_.useEffect(()=>{const o="https://mock-api.driven.com.br/api/v5/cineflex/movies",i=Si.get(o);i.then(({data:l})=>t(l)),i.catch(l=>alert(l.response.statusText))},[]);function n(){return e.length>0?e.map(({posterURL:o,id:i})=>C.jsx(Xv,{id:i,poster:o},i)):C.jsx("p",{children:"Carregando filmes...."})}const r=n();return C.jsxs(Xi,{children:[C.jsx("h1",{children:"Selecione o filme"}),C.jsx(bv,{children:r})]})}const bv=me.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-`;function e1(e){const{dia:t,data:n,sessoes:r}=e;function o(){return r.map(l=>{const{id:s,name:u}=l;return C.jsx(cp,{to:`/assentos/${s}`,children:C.jsx("button",{children:u})},s)})}const i=o();return C.jsxs(t1,{children:[C.jsxs("p",{children:[t," - ",n]}),i]})}const t1=me.div`
+`;function e1(e){const{dia:t,data:n,sessoes:r}=e;function o(){return r.map(l=>{const{id:s,name:u}=l;return C.jsx(cp,{to:`/cineflex/assentos/${s}`,children:C.jsx("button",{children:u})},s)})}const i=o();return C.jsxs(t1,{children:[C.jsxs("p",{children:[t," - ",n]}),i]})}const t1=me.div`
   min-width: 375px;
   max-width: 500px;
   margin: 10px 0;
@@ -277,4 +275,4 @@ Error generating stack: `+i.message+`
   p {
     line-height: 25px;
   }
-`;function s1(){const[e,t]=_.useState(null);return C.jsxs(vy,{children:[C.jsx(Pg,{}),C.jsxs(dy,{children:[C.jsx(mr,{path:"/",element:C.jsx(Zv,{})}),C.jsx(mr,{path:"/sessoes/:filmeId",element:C.jsx(n1,{})}),C.jsx(mr,{path:"/assentos/:sessaoId",element:C.jsx(Kv,{finalizar:n=>t(n)})}),C.jsx(mr,{path:"/sucesso",element:C.jsx(o1,{reserva:e,novaReserva:()=>t(null)})})]})]})}Fl.createRoot(document.getElementById("root")).render(C.jsx(sn.StrictMode,{children:C.jsx(s1,{})}));
+`;function s1(){const[e,t]=_.useState(null);return C.jsxs(vy,{children:[C.jsx(Pg,{}),C.jsxs(dy,{children:[C.jsx(mr,{path:"/cineflex",element:C.jsx(Zv,{})}),C.jsx(mr,{path:"/cineflex/sessoes/:filmeId",element:C.jsx(n1,{})}),C.jsx(mr,{path:"/cineflex/assentos/:sessaoId",element:C.jsx(Kv,{finalizar:n=>t(n)})}),C.jsx(mr,{path:"/cineflex/sucesso",element:C.jsx(o1,{reserva:e,novaReserva:()=>t(null)})})]})]})}Fl.createRoot(document.getElementById("root")).render(C.jsx(sn.StrictMode,{children:C.jsx(s1,{})}));
