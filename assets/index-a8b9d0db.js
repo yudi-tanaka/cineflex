@@ -242,7 +242,7 @@ Error generating stack: `+i.message+`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;function o1(e){const t=Hu(),{reserva:n,novaReserva:r}=e,{filme:o,dia:i,horario:l,assentos:s,comprador:u}=n;function a(){r(),t("/cineflex")}return C.jsxs(Xi,{children:[C.jsxs(i1,{children:[C.jsx("h1",{children:"Pedido feito com sucesso!"}),C.jsxs(Dl,{children:[C.jsx("h1",{children:"Filme e sessão"}),C.jsx("p",{children:o}),C.jsxs("p",{children:[i," ",l]})]}),C.jsxs(Dl,{children:[C.jsx("h1",{children:"Ingressos"}),s.map(({numero:f})=>C.jsxs("p",{children:["Assento ",f]},f))]}),C.jsxs(Dl,{children:[C.jsx("h1",{children:"Comprador"}),C.jsxs("p",{children:["Nome: ",u.nome]}),C.jsxs("p",{children:["CPF: ",u.cpf]})]})]}),C.jsx(l1,{onClick:a,children:"Voltar para home"})]})}const i1=me.div`
+`;function o1(e){const t=Hu(),{reserva:n,novaReserva:r}=e,{filme:o,dia:i,horario:l,assentos:s,comprador:u}=n;function a(){t("/cineflex")}return C.jsxs(Xi,{children:[C.jsxs(i1,{children:[C.jsx("h1",{children:"Pedido feito com sucesso!"}),C.jsxs(Dl,{children:[C.jsx("h1",{children:"Filme e sessão"}),C.jsx("p",{children:o}),C.jsxs("p",{children:[i," ",l]})]}),C.jsxs(Dl,{children:[C.jsx("h1",{children:"Ingressos"}),s.map(({numero:f})=>C.jsxs("p",{children:["Assento ",f]},f))]}),C.jsxs(Dl,{children:[C.jsx("h1",{children:"Comprador"}),C.jsxs("p",{children:["Nome: ",u.nome]}),C.jsxs("p",{children:["CPF: ",u.cpf]})]})]}),C.jsx(l1,{onClick:a,children:"Voltar para home"})]})}const i1=me.div`
   font-size: 22px;
 
   h1 {
